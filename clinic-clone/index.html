@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>루미나 피부과의원</title>
+<meta name="description" content="피부과 전문의가 1:1로 진단하고 시술하는 루미나 피부과의원">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ 스크롤 진행 바 ============ -->
+<div class="progress-area"><span id="progressBar"></span></div>
+
+<!-- ============ 메인 팝업 ============ -->
+<div class="popup-layer" id="popupLayer" hidden>
+  <div class="popup-box">
+    <div class="popup-body">
+      <p class="popup-eyebrow">NOTICE</p>
+      <h3 class="popup-title">여름 스킨케어<br>프로그램 안내</h3>
+      <p class="popup-desc">여름철 피부 컨디션에 맞춘 맞춤 케어 프로그램을<br>안내해 드립니다. 자세한 내용은 공지사항을 확인해 주세요.</p>
+      <a href="#notice" class="popup-link">자세히 보기</a>
+    </div>
+    <div class="popup-foot">
+      <label class="popup-check"><input type="checkbox" id="popupToday"><span>하루동안 보지 않기</span></label>
+      <button type="button" class="popup-close" id="popupClose" aria-label="팝업 닫기">닫기 <span aria-hidden="true">&times;</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ 헤더 ============ -->
+  <header class="top" id="header">
+    <div class="header-inner">
+      <h1 class="logo">
+        <a href="#top">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M6 21c4-9 16-9 20 0" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="16" cy="12" r="3" fill="currentColor"/></svg>
+          </span>
+          <span class="logo-text">LUMINA<em>피부과의원</em></span>
+        </a>
+      </h1>
+
+      <nav class="gnb" id="gnb" aria-label="주요 메뉴">
+        <ul class="gnb-list">
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">클리닉 소개</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#">브랜드 스토리</a></li>
+              <li><a href="#">의료진 소개</a></li>
+              <li><a href="#">시술 장비</a></li>
+              <li><a href="#location">진료안내 · 오시는길</a></li>
+            </ul></div>
+          </li>
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">안티에이징</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#">리프팅</a></li>
+              <li><a href="#">스킨부스터</a></li>
+              <li><a href="#">윤곽 조형</a></li>
+            </ul></div>
+          </li>
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">색소 · 혈관</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#">기미 · 잡티</a></li>
+              <li><a href="#">난치성 색소</a></li>
+              <li><a href="#">안면 홍조</a></li>
+              <li><a href="#">문신 제거</a></li>
+            </ul></div>
+          </li>
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">여드름 · 흉터</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#">여드름</a></li>
+              <li><a href="#">흉터 · 튼살</a></li>
+              <li><a href="#">모공</a></li>
+              <li><a href="#">여드름 흉터</a></li>
+            </ul></div>
+          </li>
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">쁘띠 · 스킨케어</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#">보톡스 · 필러</a></li>
+              <li><a href="#">맞춤 수액</a></li>
+              <li><a href="#">체형 관리</a></li>
+              <li><a href="#">제모</a></li>
+              <li><a href="#">메디컬 스킨케어</a></li>
+            </ul></div>
+          </li>
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">피부 질환</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#">피부 종양</a></li>
+              <li><a href="#">탈모</a></li>
+              <li><a href="#">손발톱 무좀</a></li>
+            </ul></div>
+          </li>
+          <li class="gnb-item">
+            <button type="button" class="gnb-link">커뮤니티</button>
+            <div class="gnb-sub"><ul>
+              <li><a href="#notice">공지 · 이벤트</a></li>
+              <li><a href="#ba">전후사진</a></li>
+              <li><a href="#">온라인 상담</a></li>
+            </ul></div>
+          </li>
+        </ul>
+        <div class="gnb-bg" aria-hidden="true"></div>
+      </nav>
+
+      <div class="header-util">
+        <a href="tel:0200000000" class="util-tel">TEL. 02-000-0000</a>
+        <button type="button" class="util-menu" id="menuBtn" aria-label="전체 메뉴 열기" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 라인업 바 -->
+    <div class="lineup">
+      <div class="lineup-inner">
+        <span class="lineup-label">LINE UP</span>
+        <ul class="lineup-list">
+          <li><a href="#">딥 리프팅</a></li>
+          <li><a href="#">리셋 스카</a></li>
+          <li><a href="#">클리어 톤</a></li>
+          <li><a href="#">핏 보톡스 · 필러</a></li>
+          <li><a href="#">카밍 아크네</a></li>
+        </ul>
+        <span class="lineup-place">○○역 4번 출구 · ○○빌딩 2층</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 전체 메뉴 (사이트맵) ============ -->
+  <div class="sitemap" id="sitemap" hidden>
+    <div class="sitemap-inner">
+      <div class="sitemap-head">
+        <p class="sitemap-title">SITEMAP</p>
+        <button type="button" class="sitemap-close" id="sitemapClose" aria-label="메뉴 닫기">&times;</button>
+      </div>
+      <div class="sitemap-cols" id="sitemapCols"><!-- JS가 GNB를 복제해 채웁니다 --></div>
+      <div class="sitemap-foot">
+        <a href="tel:0200000000">TEL. 02-000-0000</a>
+        <span>평일 10:00 - 20:00</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="content" id="top">
+
+    <!-- ============ 메인 비주얼 ============ -->
+    <section class="main-visual">
+      <div class="mv-bg" aria-hidden="true">
+        <span class="mv-orb"></span>
+        <span class="mv-glow"></span>
+      </div>
+      <div class="mv-inner">
+        <p class="mv-eyebrow reveal">High End Beauty</p>
+        <h2 class="mv-title reveal" data-delay="1">Bright skin,<br>brighter <em>you</em></h2>
+        <p class="mv-desc reveal" data-delay="2">
+          루미나는 ‘빛’을 뜻하는 이름입니다.<br>
+          피부 본연의 결이 가장 자연스럽게 드러나도록,<br>
+          피부과 전문의가 1:1로 진단하고 시술합니다.
+        </p>
+        <div class="mv-badge reveal" data-delay="3">
+          <span class="mv-badge-line"></span>
+          <span>20XX 디자인 어워드 수상</span>
+        </div>
+        <a href="#location" class="mv-reserve reveal" data-delay="4">
+          <span class="mv-reserve-en">reserve</span>
+          <span class="mv-reserve-ko">예약 및 상담문의</span>
+          <span class="mv-reserve-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="mv-scroll" aria-hidden="true"><span></span>SCROLL</div>
+    </section>
+
+    <!-- ============ 시그니처 프로그램 슬라이더 ============ -->
+    <section class="sec sec-signature">
+      <div class="inner">
+        <header class="sec-head reveal">
+          <p class="sec-en">Signature Program</p>
+          <h3 class="sec-title">루미나는 본연의 모습에 집중합니다.</h3>
+          <p class="sec-desc">자연스러운 모습에서 조금 더 특별해질 수 있도록<br>개인의 피부 고민에 맞는 1:1 맞춤 시술을 진행합니다.</p>
+        </header>
+      </div>
+
+      <div class="carousel reveal" data-carousel data-per="4" data-per-1024="3" data-per-768="2" data-per-480="1.2" data-loop="true">
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="prog-card" style="--c1:#e8dfd4;--c2:#c9b8a5">
+              <a href="#">
+                <span class="prog-en"><b>Deep</b><i>Lifting</i></span>
+                <span class="prog-copy">손끝으로 걷어 올리는 시간<br>가장 좋은 컨디션의 나</span>
+                <span class="prog-ko">리프팅</span>
+              </a>
+            </li>
+            <li class="prog-card" style="--c1:#dde3e6;--c2:#a9b9c3">
+              <a href="#">
+                <span class="prog-en"><b>Reset</b><i>Scar</i></span>
+                <span class="prog-copy">오래된 흔적을 비운 자리에<br>새롭게 채워지는 자신감</span>
+                <span class="prog-ko">흉터 · 튼살</span>
+              </a>
+            </li>
+            <li class="prog-card" style="--c1:#efe6dd;--c2:#d3bda6">
+              <a href="#">
+                <span class="prog-en"><b>Clear</b><i>Tone</i></span>
+                <span class="prog-copy">피부 본연의 색을 찾는 시간<br>더 자연스럽게, 더 맑게</span>
+                <span class="prog-ko">색소 질환</span>
+              </a>
+            </li>
+            <li class="prog-card" style="--c1:#e4e6e3;--c2:#b3bbb2">
+              <a href="#">
+                <span class="prog-en"><b>Fit</b><i>Botox</i></span>
+                <span class="prog-copy">맞춤 수트처럼 내 얼굴에<br>꼭 맞춘 1:1 설계</span>
+                <span class="prog-ko">보톡스 · 필러</span>
+              </a>
+            </li>
+            <li class="prog-card" style="--c1:#e9e4ec;--c2:#b9aec4">
+              <a href="#">
+                <span class="prog-en"><b>Calm</b><i>Acne</i></span>
+                <span class="prog-copy">가라앉히고 다시 세우는<br>피부의 기본 컨디션</span>
+                <span class="prog-ko">여드름</span>
+              </a>
+            </li>
+            <li class="prog-card" style="--c1:#e6e9ec;--c2:#a8b4bd">
+              <a href="#">
+                <span class="prog-en"><b>Glow</b><i>Booster</i></span>
+                <span class="prog-copy">속부터 차오르는 수분<br>매일이 좋은 피부 결</span>
+                <span class="prog-ko">스킨부스터</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="carousel-nav inner">
+          <button type="button" class="carousel-prev" aria-label="이전 슬라이드">←</button>
+          <div class="carousel-progress"><span></span></div>
+          <button type="button" class="carousel-next" aria-label="다음 슬라이드">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 스페셜리티 ============ -->
+    <section class="sec sec-speciality">
+      <div class="inner">
+        <header class="sec-head reveal">
+          <p class="sec-en">Lumina Speciality</p>
+          <h3 class="sec-title">빛이 밝아오듯,<br>루미나만의 특별함</h3>
+        </header>
+
+        <div class="spec-row reveal">
+          <div class="spec-visual" style="--c1:#efe8e0;--c2:#cdbdab"><span class="spec-no">01</span></div>
+          <div class="spec-text">
+            <p class="spec-en">Brand Essence</p>
+            <h4 class="spec-title">당신을 더 모던하게</h4>
+            <p class="spec-desc">아침 빛처럼 환하고 따뜻하게. 번지기 시작한 따스함이 얼굴에 내려앉을 때,<br>그 자연스러움이 더욱 특별해지도록 설계합니다.</p>
+            <a href="#" class="btn-line">브랜드 스토리 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="spec-row reverse reveal">
+          <div class="spec-visual" style="--c1:#e3e9ed;--c2:#a9b9c3"><span class="spec-no">02</span></div>
+          <div class="spec-text">
+            <p class="spec-en">1:1 Customizing</p>
+            <h4 class="spec-title">처음부터 끝까지<br>전문가의 손끝으로</h4>
+            <p class="spec-desc">상담부터 시술, 사후 관리까지 한 명의 전문의가 책임집니다.<br>피부 상태와 생활 패턴을 함께 고려한 커스터마이징 케어를 제공합니다.</p>
+            <a href="#" class="btn-line">진료 과정 보기 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="spec-row reveal">
+          <div class="spec-visual" style="--c1:#eae6e1;--c2:#c2b5a6"><span class="spec-no">03</span></div>
+          <div class="spec-text">
+            <p class="spec-en">Private Room</p>
+            <h4 class="spec-title">머무름이 휴식이 되는<br>1인 관리실</h4>
+            <p class="spec-desc">모든 관리실은 1인 프라이빗 공간으로 운영됩니다.<br>시술 전후의 시간까지 온전히 편안할 수 있도록 준비했습니다.</p>
+            <a href="#" class="btn-line">공간 둘러보기 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="spec-row reverse reveal">
+          <div class="spec-visual" style="--c1:#e6e8e4;--c2:#b0b8ae"><span class="spec-no">04</span></div>
+          <div class="spec-text">
+            <p class="spec-en">Equipment</p>
+            <h4 class="spec-title">수많은 말보다<br>한 번의 결과로</h4>
+            <p class="spec-desc">정품 · 정량 원칙을 지키며, 검증된 장비만을 도입합니다.<br>결과로 증명하는 진료를 지향합니다.</p>
+            <a href="#" class="btn-line">시술 장비 보기 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 의료진 (고정 배경 + 카운터) ============ -->
+    <section class="sec-doctor">
+      <div class="doc-fix">
+        <div class="inner doc-inner">
+          <p class="doc-en reveal">Only Dermatologist</p>
+          <h3 class="doc-title reveal" data-delay="1">
+            <strong data-count="35040">0</strong><span>시간</span><br>
+            피부만을 고민한 시간
+          </h3>
+          <p class="doc-desc reveal" data-delay="2">
+            피부과 전문의가 피부를 온전히 이해하기 위해 쌓아온 시간입니다.<br>
+            수많은 진료 경험과 연구를 거친 전문의가 직접 진단하고 시술합니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="inner doc-list-wrap">
+        <p class="sec-en reveal">Lumina Doctors</p>
+        <ul class="doc-list">
+          <li class="doc-card reveal">
+            <div class="doc-photo" style="--c1:#e9e2da;--c2:#c4b3a0"></div>
+            <div class="doc-info">
+              <p class="doc-role">대표원장</p>
+              <p class="doc-name">홍 길 동 <em>피부과 전문의</em></p>
+              <ul class="doc-career">
+                <li>○○대학교 의과대학 졸업</li>
+                <li>대한피부과학회 정회원</li>
+                <li>대한레이저피부모발학회 정회원</li>
+              </ul>
+            </div>
+          </li>
+          <li class="doc-card reveal" data-delay="1">
+            <div class="doc-photo" style="--c1:#e2e7ea;--c2:#a9b9c3"></div>
+            <div class="doc-info">
+              <p class="doc-role">원장</p>
+              <p class="doc-name">김 아 무 <em>피부과 전문의</em></p>
+              <ul class="doc-career">
+                <li>○○대학교 의과대학 졸업</li>
+                <li>대한피부과학회 정회원</li>
+                <li>대한미용피부외과학회 정회원</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 유튜브 밴드 ============ -->
+    <section class="sec-youtube">
+      <div class="inner yt-inner">
+        <div class="yt-text">
+          <p class="yt-spaced reveal">D r .&nbsp; L u m i n a</p>
+          <h3 class="yt-title reveal" data-delay="1">루미나 YOUTUBE</h3>
+          <p class="yt-desc reveal" data-delay="2">대표원장이 직접 전하는 실질적인 피부 정보.<br>피부 고민을 덜어줄 이야기를 준비했습니다.</p>
+          <a href="#" class="btn-solid reveal" data-delay="3">바로가기 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="yt-visual reveal" data-delay="2">
+          <div class="yt-thumb"><span class="yt-play" aria-hidden="true"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 전후사진 ============ -->
+    <section class="sec sec-ba" id="ba">
+      <div class="inner">
+        <header class="sec-head reveal">
+          <p class="sec-en">Before &amp; After</p>
+          <h3 class="sec-title">전문가의 손끝에서 완성된 변화</h3>
+          <p class="sec-desc">루미나의 시술 전후 사진을 함께 확인해 보세요.<br><small>* 카드를 클릭하면 After 이미지로 전환됩니다.</small></p>
+        </header>
+      </div>
+
+      <div class="carousel reveal" data-carousel data-per="3" data-per-1024="2.4" data-per-768="1.6" data-per-480="1.1" data-loop="true">
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="ba-card"><button type="button" class="ba-flip">
+              <span class="ba-img" style="--c1:#e7ded4;--c2:#c0ac96"><b>BEFORE</b></span>
+              <span class="ba-img ba-after" style="--c1:#f3ece4;--c2:#d8c7b2"><b>AFTER</b></span>
+              <span class="ba-cap"><i>여드름 흉터 치료</i>결이 정돈되는 시간</span>
+            </button></li>
+            <li class="ba-card"><button type="button" class="ba-flip">
+              <span class="ba-img" style="--c1:#dfe5e9;--c2:#a5b4bd"><b>BEFORE</b></span>
+              <span class="ba-img ba-after" style="--c1:#eef2f4;--c2:#c2ced5"><b>AFTER</b></span>
+              <span class="ba-cap"><i>필러 시술</i>과하지 않은 균형</span>
+            </button></li>
+            <li class="ba-card"><button type="button" class="ba-flip">
+              <span class="ba-img" style="--c1:#e6e3dd;--c2:#b8ad9c"><b>BEFORE</b></span>
+              <span class="ba-img ba-after" style="--c1:#f1eee8;--c2:#d2c8b8"><b>AFTER</b></span>
+              <span class="ba-cap"><i>보톡스 시술</i>표정을 남기는 방법</span>
+            </button></li>
+            <li class="ba-card"><button type="button" class="ba-flip">
+              <span class="ba-img" style="--c1:#e4e7e3;--c2:#adb6ac"><b>BEFORE</b></span>
+              <span class="ba-img ba-after" style="--c1:#f0f2ef;--c2:#c9d0c8"><b>AFTER</b></span>
+              <span class="ba-cap"><i>리프팅 시술</i>다시 세우는 윤곽</span>
+            </button></li>
+            <li class="ba-card"><button type="button" class="ba-flip">
+              <span class="ba-img" style="--c1:#e8e2e9;--c2:#b6aabf"><b>BEFORE</b></span>
+              <span class="ba-img ba-after" style="--c1:#f2eef4;--c2:#cec3d8"><b>AFTER</b></span>
+              <span class="ba-cap"><i>색소 치료</i>맑아지는 톤</span>
+            </button></li>
+          </ul>
+        </div>
+        <div class="carousel-nav inner">
+          <button type="button" class="carousel-prev" aria-label="이전 슬라이드">←</button>
+          <div class="carousel-progress"><span></span></div>
+          <button type="button" class="carousel-next" aria-label="다음 슬라이드">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 리얼 리뷰 ============ -->
+    <section class="sec sec-review">
+      <div class="inner">
+        <header class="sec-head reveal">
+          <p class="sec-en">Real Review</p>
+          <h3 class="sec-title">고객의 이야기에<br>온전히 귀 기울이겠습니다.</h3>
+        </header>
+      </div>
+
+      <div class="carousel reveal" data-carousel data-per="3" data-per-1024="2" data-per-768="1.4" data-per-480="1.1" data-loop="true" data-auto="4500">
+        <div class="carousel-viewport">
+          <ul class="carousel-track">
+            <li class="rv-card"><blockquote>
+              <p>급하게 검색해서 방문했는데 과하게 권하지 않으셔서 더 신뢰가 갔어요. 관리 받는 곳을 아예 옮기려고 합니다.</p>
+              <footer><span class="rv-star" aria-label="별점 5점">★★★★★</span><cite>김○○ 고객님</cite></footer>
+            </blockquote></li>
+            <li class="rv-card"><blockquote>
+              <p>역과 가까워서 접근성이 정말 좋습니다. 상담이 꼼꼼해서 시술 후에도 걱정이 없었어요. 재방문 의사 100%입니다.</p>
+              <footer><span class="rv-star" aria-label="별점 5점">★★★★★</span><cite>이○○ 고객님</cite></footer>
+            </blockquote></li>
+            <li class="rv-card"><blockquote>
+              <p>원장님이 섬세하시고 데스크 직원분들도 친절하셔서 올 때마다 기분이 좋아집니다. 결과도 자연스러워서 만족해요.</p>
+              <footer><span class="rv-star" aria-label="별점 5점">★★★★★</span><cite>박○○ 고객님</cite></footer>
+            </blockquote></li>
+            <li class="rv-card"><blockquote>
+              <p>피부 상태를 먼저 오래 봐주시고 필요한 것만 제안해 주셔서 좋았습니다. 관리실도 1인실이라 편안했어요.</p>
+              <footer><span class="rv-star" aria-label="별점 5점">★★★★★</span><cite>정○○ 고객님</cite></footer>
+            </blockquote></li>
+          </ul>
+        </div>
+        <div class="carousel-nav inner">
+          <button type="button" class="carousel-prev" aria-label="이전 슬라이드">←</button>
+          <div class="carousel-progress"><span></span></div>
+          <button type="button" class="carousel-next" aria-label="다음 슬라이드">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 공지 · 이벤트 ============ -->
+    <section class="sec sec-notice" id="notice">
+      <div class="inner">
+        <header class="sec-head reveal">
+          <p class="sec-en">Notice &amp; Event</p>
+          <h3 class="sec-title">공지 · 이벤트</h3>
+        </header>
+        <ul class="notice-list reveal">
+          <li><a href="#"><span class="nt-tag">공지</span><span class="nt-subject">여름 휴진 일정 안내</span><span class="nt-date">20XX.07.01</span></a></li>
+          <li><a href="#"><span class="nt-tag event">이벤트</span><span class="nt-subject">여드름 흉터 케어 패키지 오픈</span><span class="nt-date">20XX.06.20</span></a></li>
+          <li><a href="#"><span class="nt-tag event">이벤트</span><span class="nt-subject">시즌 스킨부스터 프로그램 안내</span><span class="nt-date">20XX.06.02</span></a></li>
+          <li><a href="#"><span class="nt-tag">공지</span><span class="nt-subject">주차 이용 방법 변경 안내</span><span class="nt-date">20XX.05.18</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 오시는 길 ============ -->
+    <section class="sec-location" id="location">
+      <div class="inner loc-inner">
+        <div class="loc-map reveal" aria-label="약도">
+          <div class="loc-map-grid" aria-hidden="true"></div>
+          <span class="loc-pin" aria-hidden="true"></span>
+          <span class="loc-map-label">LUMINA CLINIC</span>
+        </div>
+        <div class="loc-text">
+          <p class="sec-en reveal">Location</p>
+          <h3 class="loc-addr reveal" data-delay="1">서울특별시 ○○구 ○○로 000,<br>○○빌딩 2층</h3>
+          <p class="loc-sub reveal" data-delay="2">○○역 4번 출구와 바로 연결되어 있습니다.</p>
+          <p class="loc-tel reveal" data-delay="2"><a href="tel:0200000000">TEL. 02-000-0000</a></p>
+
+          <div class="loc-time reveal" data-delay="3">
+            <p class="loc-time-title">Time</p>
+            <dl>
+              <div><dt>월 · 목 · 금</dt><dd>AM 10:00 – PM 08:00</dd></div>
+              <div><dt>화 · 수</dt><dd>AM 10:00 – PM 07:00</dd></div>
+              <div><dt>토요일</dt><dd>AM 10:00 – PM 03:00</dd></div>
+              <div><dt>점심시간</dt><dd>PM 01:00 – PM 02:00</dd></div>
+            </dl>
+            <p class="loc-note">일요일 · 공휴일은 휴진입니다. 토요일은 점심시간 없이 진료합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 푸터 ============ -->
+  <footer class="bottom">
+    <div class="inner ft-inner">
+      <div class="ft-brand">
+        <span class="logo-text">LUMINA<em>피부과의원</em></span>
+        <ul class="ft-policy">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+          <li><a href="#">비급여수가표</a></li>
+        </ul>
+      </div>
+      <div class="ft-info">
+        <ul class="ft-meta">
+          <li><span>상호</span> 루미나피부과의원</li>
+          <li><span>대표</span> 홍 길 동</li>
+          <li><span>사업자등록번호</span> 000-00-00000</li>
+          <li><span>대표번호</span> 02-000-0000</li>
+          <li><span>E-mail</span> hello@example.com</li>
+          <li class="full"><span>주소</span> 서울특별시 ○○구 ○○로 000, 2층 000호</li>
+        </ul>
+        <p class="ft-copy">COPYRIGHT &copy; LUMINA CLINIC. ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ 퀵 메뉴 ============ -->
+  <aside class="quick" id="quick" aria-label="바로가기">
+    <button type="button" class="quick-toggle" id="quickToggle" aria-expanded="true" aria-label="퀵 메뉴 접기">−</button>
+    <ul class="quick-list">
+      <li><a href="#" title="유튜브">YT</a></li>
+      <li><a href="#" title="인스타그램">IG</a></li>
+      <li><a href="#" title="블로그">BL</a></li>
+      <li><a href="#" title="카카오톡 상담" class="kakao">TALK</a></li>
+    </ul>
+    <button type="button" class="quick-top" id="toTop">TOP</button>
+  </aside>
+
+  <!-- ============ 모바일 하단 바 ============ -->
+  <nav class="mobile-bar" aria-label="모바일 바로가기">
+    <a href="tel:0200000000">전화 상담</a>
+    <a href="#location">오시는 길</a>
+    <a href="#" class="primary">카카오톡 예약</a>
+  </nav>
+
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
